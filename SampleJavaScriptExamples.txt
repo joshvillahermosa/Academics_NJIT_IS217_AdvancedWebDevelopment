@@ -1,0 +1,21 @@
+Joshua John Villahermosa
+Git Repository -- https://github.com/joshvillahermosa/Academics_NJIT_IS217_AdvancedWebDevelopment.git
+
+5 JavaScript Examples: (All found from Github, cloned, and tested on my local machine)
+
+1.Calendar Picker - Kalendae - https://github.com/ChiperSoft/Kalendae
+The reason why I chose this particular calendar picker because it has a wide range on how to pick dates. This can be useful for creating a site for planning events.
+
+2.Gallery Viewer - GalleryViewer - https://github.com/jackwanders/GalleryView.git
+This particular gallery viewer is great because it includes the title of the picture and shows a preview on the bottom.
+
+3.Graphs - Flotr2 - https://github.com/HumbleSoftware/Flotr2.git
+Drawing graphs are useful when collecting data and converting it to useful information.
+
+4.Form Validator - jQuery-Validation-Engine - https://github.com/posabsolute/jQuery-Validation-Engine.git
+Used to help validate forms and data so that any following script will not fail.
+
+5.Mario - mariohtml5 - https://github.com/robertkleffner/mariohtml5.git
+Awesome mario game. Going to attempt to recreate if I have enough time (Not good enough to understand how it works ... yet).
+
+The best I can recreate is the Gallery Viewer (2). I do not have a good understanding with JavaScript, but I am familiar create a slide show using JavaScript. Hopefully some parts will still apply.
