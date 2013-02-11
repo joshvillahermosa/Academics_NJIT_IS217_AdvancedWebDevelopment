@@ -7,15 +7,15 @@
 //Car function
 
 function Car(options){
-	this.doors = options.door || 4;
-	this.state = option.state || "brand new";
-	this.color = option.color || "silver";
+	this.doors = options.doors || 4;
+	this.state = options.state || "brand new";
+	this.color = options.color || "silver";
 }
 
 function Truck (options){
 	this.state = options.state || "used";
 	this.wheelSize = options.wheelSize || "large";
-	this.color = option.color || "blue";
+	this.color = options.color || "blue";
 }		 
 	 
 function VehicleFactory (){
@@ -25,19 +25,20 @@ function VehicleFactory (){
 VehicleFactory.prototype.vehicleClass = Car;
 
 VehicleFactory.prototype.createVehicle = function (options){
-	if(options.vehicleType == "Car"){
+	if(options.vehicleType === "Car"){
 		this.vehicleClass = Car;
 	}else{
-		this.vehicleClass (options);
+		this.vehicleClass = Truck;
 	}
+	
+	return new this.vehicleClass(options);
 };
 
 var carFactory = new VehicleFactory();
 var car = carFactory.createVehicle({
-	vehicleType: "car",
+	vehicleType: "Car",
 	color: "yellow",
-	doors: 6
-	});
+	doors: 6});
 	
 console.log(car instanceof Car);
 
