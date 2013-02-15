@@ -43,3 +43,5 @@ var car = carFactory.createVehicle({
 console.log(car instanceof Car);
 
 console.log(car);
+
+document.getElementById('Example1').innerHTML = car;
