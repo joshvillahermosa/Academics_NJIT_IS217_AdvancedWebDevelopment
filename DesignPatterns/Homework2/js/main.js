@@ -8,9 +8,9 @@
 //*******************
 //	Defined functions
 //*******************
-//*******
-//Factory
-//*******
+//*********************
+//Factory and Decorator
+//*********************
 function robotFactory(){}
 robotFactory.prototype.createRobot = function(){
 	var robot = function(){
@@ -68,28 +68,54 @@ robotFactory.prototype.createRobot = function(){
 	console.log('Robot Created! \n');
 	return new robot;
 };
-//*******************
-//Factory pattern end
-//*******************
-//Decorator pattern
-//*******************
+//****************
+//Pattern end
+//****************
+//Decorator Pattern
+//****************
 
-
-
+function modFactory (robot){
+	robot.setColor = function(color){
+		this.Color = color;
+	};
+	
+	robot.colorInfo = function(){
+		console.log(color);
+	}
+	robot.setMod = function(mod){
+		this.mod = mod;
+	};
+	
+	return robot;
+}
+//****************
+//Pattern End
 //****************
 //Called functions
 //****************
 var momCo = new robotFactory();
+//Creates robot.
 var bender = momCo.createRobot();
 console.log(bender);
 
-//Bender info
+//Decorator functions from factory
 bender.nameSet('Bender');
 bender.toolSet('Bedning Arms');
+
+//Display Info
 bender.nameInfo();
 bender.armsInfo();
 bender.legsInfo();
-bender.materialInfo();
+bender.materialInfo();bender
 bender.toolInfo();
+
+//Different Decorator functions from different factory
+modFactory(bender);
+bender.setColor('Yellow');
+bender.setMod('Jump increase');
+console.log(bender);
+
+
+
 
 
