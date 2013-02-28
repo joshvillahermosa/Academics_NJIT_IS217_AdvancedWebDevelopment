@@ -65,6 +65,7 @@ factory.prototype.createObject = function(){
 
 //16 Prototype pattern
 
+	var object = object.create();
 
 //17 Constrcutor pattern
 var object = function(){
@@ -73,4 +74,14 @@ var object = function(){
 	this.name = 'name';
 };
 
-//
+//18 Decorator pattern
+function decorate(){}
+decorate.prototype.add(object) = function(){
+	object = function(){
+		this.flavor = 'mocha';
+	}
+	return object;
+};
+
+
+
