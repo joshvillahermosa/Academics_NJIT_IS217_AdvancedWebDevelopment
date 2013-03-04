@@ -15,6 +15,12 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        
+        <style type="text/css">
+        #container{
+			background-color:black;
+		}
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -57,7 +63,7 @@
 		<script type="text/javascript">
 			/***Scene size***/
 			//Scene side
-			var WIDTH = 400, HEIGHT = 300;
+			var WIDTH = 700, HEIGHT = 500;
 			
 			//Camera attributes
 			var VIEW_ANGEL = 45, 
@@ -82,19 +88,43 @@
 			/***Making the Mesh***/
 			//Here is where we begin to experiment with creating objects in three.js
 			//Here we set up a sphere.
-			var radius = 50, segments = 16, rings = 16;
+			var radius = 50, segments = 50, rings = 50;
+			
+			//Set up for a cube
+			var cubeWidth = 50, cubeHeight = 50; cubeDepth = 100;
 			//Here is where we define sphereMaterial
 			var sphereMaterial = new THREE.MeshLambertMaterial(
 				{
 					color: 0xCC0000
 				}
 			);
-
+			
+			var cubeMaterial = new THREE.MeshLambertMaterial(
+				{
+					color: 0xCC5555
+				}
+			);
+			
 			//Three.js set up for the sphere.
 			var sphere = new THREE.Mesh(
 				new THREE.SphereGeometry(radius, segments, rings),
-				sphereMaterial);			
+				sphereMaterial
+			);
+			//Adds Cube!
+			var cube = new THREE.Mesh(
+				new THREE.CubeGeometry(cubeWidth, cubeHeight, cubeDepth),
+				cubeMaterial
+			);
+			
+			cube.position.set(100,25,25);
+			
 			scene.add(sphere);
+			scene.add(cube);		
+			//Makes sphere dynamic
+			sphere.geometry.dynamic = true;
+			
+			//Lets make the sphere move
+			
 			scene.add(camera);
 			
 			/***Adding Lights***/
