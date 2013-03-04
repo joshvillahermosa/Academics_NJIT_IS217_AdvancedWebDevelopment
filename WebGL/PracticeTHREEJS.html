@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -34,10 +34,12 @@
 			<div id="Main">
 			<div id="Background">
 				<aside>
-				Test One
+					<p>Threee.js tutorial and practice</p>
 				</aside>
 				<section>
-				Test
+					<div id="container">
+						
+					</div>
 				</section>
 			</div>
 			</div>
@@ -51,14 +53,63 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
 		<script src="js/three.js"></script>
-        <script src="main.js"></script>
+		<script src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript">
+			/***Scene size***/
+			//Scene side
+			var WIDTH = 400, HEIGHT = 300;
+			
+			//Camera attributes
+			var VIEW_ANGEL = 45, 
+				ASPECT = WIDTH/HEIGHT, 
+				NEAR = 0.1,
+				FAR = 10000;
+			
+			//Attached to HTML
+			var $container = $('#container');
+			
+			//CREATES WEBGL AND THREEJS OBJECTS
+			var renderer = new THREE.WebGLRenderer();
+			var camera = new THREE.PerspectiveCamera(VIEW_ANGEL, ASPECT, NEAR, FAR); //Camera avar attributes go here.
+			var scene = new THREE.Scene();
+			
+			//Using THREE JS functions, we can add and manupulate the camera
+			scene.add(camera);
+			camera.position.z = 300;
+			renderer.setSize(WIDTH, HEIGHT); //Starts renderer.
+			$container.append(renderer.domElement);//Attaches reder to DOM element.
+			
+			/***Making the Mesh***/
+			//Here is where we begin to experiment with creating objects in three.js
+			//Here we set up a sphere.
+			var radius = 50, segments = 16, rings = 16;
+			//Here is where we define sphereMaterial
+			var sphereMaterial = new THREE.MeshLambertMaterial(
+				{
+					color: 0xCC0000
+				}
+			);
+
+			//Three.js set up for the sphere.
+			var sphere = new THREE.Mesh(
+				new THREE.SphereGeometry(radius, segments, rings),
+				sphereMaterial);			
+			scene.add(sphere);
+			scene.add(camera);
+			
+			/***Adding Lights***/
+			var pointLight = new THREE.PointLight(0xFFFFFF);
+			//set its position
+			pointLight.position.x = 10;
+			pointLight.position.y = 50;
+			pointLight.position.z = 130;
+			scene.add(pointLight);
+			
+			/***Render***/
+			//Draws the dam thing
+			renderer.render(scene, camera);
+		</script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
     </body>
 </html>
