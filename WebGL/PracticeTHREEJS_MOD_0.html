@@ -41,6 +41,9 @@
 			<div id="Background">
 				<aside>
 					<p>Three.js tutorial and practice</p>
+					<p>Use for reference</p>
+					<a href="https://github.com/sole/three.js-tutorials/blob/master/drawing_the_axes/main.js">Objects</a>
+					<a href="http://www.staunsholm.dk/THREE/jsdoc/symbols/THREE.CubeGeometry.html">Reference</a>
 				</aside>
 				<section>
 					<div id="container">
@@ -61,6 +64,8 @@
 		<script src="js/three.js"></script>
 		<script src="js/jquery-1.9.1.js"></script>
 		<script type="text/javascript">
+			
+		
 			/***Scene size***/
 			//Scene side
 			var WIDTH = 700, HEIGHT = 500;
@@ -138,6 +143,13 @@
 			/***Render***/
 			//Draws the dam thing
 			renderer.render(scene, camera);
+			window.setInterval(moveSphere, 50);
+			//Moves the sphere?
+			function moveSphere (){
+				sphere.position.x += 1;
+				sphere.position.y -= 1;
+				renderer.render(scene, camera)
+			}	
 		</script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
