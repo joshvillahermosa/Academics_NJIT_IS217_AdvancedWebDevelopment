@@ -68,7 +68,7 @@
 		
 			/***Scene size***/
 			//Scene side
-			var WIDTH = 700, HEIGHT = 500;
+			var WIDTH = 800, HEIGHT = 700;
 			
 			//Camera attributes
 			var VIEW_ANGEL = 45, 
@@ -93,7 +93,7 @@
 			/***Making the Mesh***/
 			//Here is where we begin to experiment with creating objects in three.js
 			//Here we set up a sphere.
-			var radius = 50, segments = 50, rings = 50;
+			var radius = 20, segments = 20, rings = 50;
 			
 			//Set up for a cube
 			var cubeWidth = 50, cubeHeight = 50; cubeDepth = 100;
@@ -148,6 +148,7 @@
 			function moveSphere (){
 				sphere.position.x += 1;
 				sphere.position.y -= 1;
+				sphere.position.z += 5;
 				renderer.render(scene, camera)
 			}	
 		</script>
