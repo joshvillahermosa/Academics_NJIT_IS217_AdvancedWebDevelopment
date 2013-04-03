@@ -1,0 +1,8 @@
+Done! Here's the API key and secret for your new app:
+
+	IS217_Project_01
+Key:
+8b328c4b67ab2a396224f8932f754ee0
+
+Secret:
+1b7dab0120ca21c5
