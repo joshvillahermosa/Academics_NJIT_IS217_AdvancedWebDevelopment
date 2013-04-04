@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script type="text/javascript">
+        	function drawMap(){
+        		//Gets Drawing environemnt
+        		var plot = document.getElementById('Map').getContext('2d'); //Gets output
+				var img = new Image(); //Gets image
+				img.onload = function(){
+					plot.drawImage(img,0,0);
+					//Draws shape --
+					plot.lineWidth = 4; //Styles, use even numbers
+					plot.lineJoin = "round"; // Sets joint by line
+					plot.strokeStyle = "#7f7f7f";
+					plot.beginPath();
+					plot.moveTo(20,10);//Takes 2 -- Does not draw, only set pen start
+					plot.lineTo(50,50);//sets path
+					plot.lineTo(300,21);
+					plot.lineTo(23,21);
+					plot.lineTo(150,211);
+					plot.lineTo(90,21);
+					plot.stroke();//Actually draws!
+					
+					plot.lineJoin = "miter";
+					plot.beginPath();
+					plot.moveTo(150,180);
+					plot.lineTo(250,211);
+					plot.lineTo(90,31);
+
+				}
+				img.src = 'evil.jpg';
+        	}
+        </script>
+    </head>
+    <body onload="drawMap();">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div id="Center">
+			<header>
+				<p>Joshua John Villahermosa</p>
+			</header>
+			<nav>
+				<ul>
+					<li class="NavStyle1"><a href="http://www.joshvee.com">Web Page</a></li>
+				</ul>
+			</nav>
+			<div id="Main">
+			<div id="Background">
+				<aside>
+					<h2>Chapter 6 API Support</h2>
+				</aside>
+				<section>
+					<article>
+						<h1>Chapter 6</h1>
+						<h2>Implementation</h2>
+							<canvas id="Map" width="500" height="500">
+							Does not support canvas element, other words, your browser is outdates!
+							And you should feel bad!
+							</canvas>
+						<hr />
+						<h3>Notes</h3>
+						<ul>
+							<li>Plain text in the canvase is sayong browser outdates</li>
+							<li>Origin is in the upper left</li>
+							<li>pos x and y move left and down</li>
+							<li>Check sites: canvasdemo and modenizer</li>
+						</ul>
+					</article>
+				</section>
+			</div>
+			</div>
+			<footer>
+			(C) Copyright of Joshua John Villahermosa 2013<br />
+			<a href="mailto: joshua.villahermosa@gmail.com">joshua.villahermosa@gmail.com</a>
+			</footer>
+		</div>
+
+        <!-- Add your site or application content here -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    </body>
+</html>
