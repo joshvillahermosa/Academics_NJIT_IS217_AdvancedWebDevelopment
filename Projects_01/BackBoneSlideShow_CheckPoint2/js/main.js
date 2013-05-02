@@ -55,7 +55,7 @@
 		LoadFlickrImg: function(){
 			var FlickrPics = new Array();
 			var FlickrUrl = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";//"http://api.flickr.com/services/rest/?method=flickr.photos.getRecent";
-			var FlickrTag =document.FlickrTag.Flickr.value;
+			var FlickrTag = "Trains";
 
 			// Functon 3
 			/*
@@ -91,13 +91,6 @@
 						id: 'Flickr'+i,
 						src: item.media.m
 					} ).appendTo("#FlickrSlideShow");
-					if (i === 19) { //cHANEGS LAOD IMAGE
-						return false;
-					};
-					$("<img>").attr( {
-						id: 'Flickr'+i,
-						src: item.media.m
-					} ).appendTo("#Photocollection");
 					if (i === 19) { //cHANEGS LAOD IMAGE
 						return false;
 					};
@@ -247,7 +240,7 @@
 
 	//Functions
 	SlideShow.LoadImages();
-	//SlideShow.LoadFlickrImg();
+	SlideShow.LoadFlickrImg();
 	SlideShow.SlideRoll();
-	//SlideShow.FlickrSlideRoll();
+	SlideShow.FlickrSlideRoll();
 })(jQuery);

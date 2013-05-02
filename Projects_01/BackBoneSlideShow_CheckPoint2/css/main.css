@@ -267,13 +267,6 @@ Slide show
     width: 500px;
     overflow: hidden;
 }
-
-#Photocollection  img{
-    height: 100px;
-    width: 100px;
-    padding: 3px;
-    border: 1px solid black;
-}
 /***
 End SlideShow
 ***/
