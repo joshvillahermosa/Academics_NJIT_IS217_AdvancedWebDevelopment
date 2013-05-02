@@ -1,0 +1,12 @@
+{
+	"name":"read",
+	"version":"1.0.0",
+	"main":"Parser.js",
+	"scripts":{
+		"test":"Echo no file found"
+	},
+	"dependencies":{
+		"optimist":"0.3.4",
+		"jquery":"1.7.3"
+	}
+}
